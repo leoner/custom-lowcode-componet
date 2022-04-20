@@ -1,0 +1,55 @@
+{
+  "packages": [
+    {
+      "package": "antd-protable-component",
+      "version": "0.1.2",
+      "library": "AntdProtableComponent",
+      "urls": [
+        "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/view.js",
+        "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/view.css"
+      ],
+      "editUrls": [
+        "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/view.js",
+        "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/view.css"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "exportName": "AntdProtableComponentMeta",
+      "npm": {
+        "package": "antd-protable-component",
+        "version": "0.1.2"
+      },
+      "url": "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/meta.js",
+      "urls": {
+        "default": "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/meta.js"
+      }
+    }
+  ],
+  "sort": {
+    "groupList": [
+      "精选组件",
+      "原子组件"
+    ],
+    "categoryList": [
+      "基础元素",
+      "布局容器类",
+      "表格类",
+      "表单详情类",
+      "帮助类",
+      "对话框类",
+      "业务类",
+      "通用",
+      "引导",
+      "信息输入",
+      "信息展示",
+      "信息反馈"
+    ]
+  },
+  "groupList": [
+    "精选组件",
+    "原子组件"
+  ],
+  "ignoreComponents": {}
+}
