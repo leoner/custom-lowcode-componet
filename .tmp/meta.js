@@ -1,6 +1,7 @@
 import AntdProTableMeta from '/Users/kanghui/projj/github.com/leoner/custom-lowcode-componet/lowcode/antd-pro-table/meta'
 import ColorfulButtonMeta from '/Users/kanghui/projj/github.com/leoner/custom-lowcode-componet/lowcode/colorful-button/meta'
 import ColorfulInputMeta from '/Users/kanghui/projj/github.com/leoner/custom-lowcode-componet/lowcode/colorful-input/meta'
+import PortalCardMeta from '/Users/kanghui/projj/github.com/leoner/custom-lowcode-componet/lowcode/portal-card/meta'
 
 const componentCategorySort = {};
 ["基础元素","布局容器类","表格类","表单详情类","帮助类","对话框类","业务类","通用","引导","信息输入","信息展示","信息反馈"]
@@ -102,7 +103,7 @@ function fillRealVersion(meta, packageName = 'antd-protable-component', version 
   return meta;
 }
 
-const componentMetas = [AntdProTableMeta,ColorfulButtonMeta,ColorfulInputMeta];
+const componentMetas = [AntdProTableMeta,ColorfulButtonMeta,ColorfulInputMeta,PortalCardMeta];
 const components = [];
 const npmInfo = {};
 componentMetas.forEach(meta => {

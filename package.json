@@ -29,7 +29,6 @@
   ],
   "author": "fusion-team",
   "license": "MIT",
-  
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": "f2elint exec eslint",
     "**/*.{css,scss,less,acss}": "f2elint exec stylelint"
@@ -81,6 +80,7 @@
     "webpack": "^4.46.x"
   },
   "componentConfig": {
-    "isComponentLibrary": true
+    "isComponentLibrary": true,
+    "materialSchema": "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/assets-prod.json"
   }
 }

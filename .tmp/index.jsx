@@ -157,7 +157,7 @@ init(() => {
         });
         assets.groupList = devAssets.groupList;
       } else {
-        const extraAssets = [];
+        const extraAssets = ["https://alifd.alicdn.com/npm/@alilc/lowcode-materials@1.0.1/build/lowcode/assets-prod.json"];
         const builtinAssets = [];
         extraAssets && await handleExtraAssets(assets, extraAssets);
         builtinAssets && await handleExtraAssets(assets, builtinAssets);
