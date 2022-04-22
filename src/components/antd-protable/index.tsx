@@ -48,26 +48,26 @@ const AntdProTable: React.FC<AntdProTableProps> = function AntdProTable(props) {
 
   const columns: any[] = [
     {
-      title: '支付渠道代码', // title
+      title: '渠道代码', // title
       dataIndex: 'paycenterId', // name
       disabled: false, // true: 表示不可编辑，false表示可编辑
       required: false, // true 表示必填，false表示非必填
     },
     {
-      title: '支付渠道名称',
+      title: '渠道名称',
       dataIndex: 'paycenterId',
       disabled: false,
       required: false,
       valueType: 'select',
     },
     {
-      title: 'TA代码',
+      title: '代码',
       dataIndex: 'paycenterId',
       disabled: false,
       required: false,
     },
     {
-      title: 'TA名称',
+      title: '名称',
       dataIndex: 'paycenterId',
       disabled: false,
       required: false,
