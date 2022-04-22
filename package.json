@@ -1,6 +1,6 @@
 {
   "name": "antd-protable-component",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "antd-protable-component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -81,6 +81,6 @@
   },
   "componentConfig": {
     "isComponentLibrary": true,
-    "materialSchema": "https://unpkg.com/antd-protable-component@0.1.2/build/lowcode/assets-prod.json"
+    "materialSchema": "https://unpkg.com/antd-protable-component@0.1.3/build/lowcode/assets-prod.json"
   }
 }

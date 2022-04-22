@@ -1,12 +1,8 @@
 import * as React from 'react';
 import { createElement } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
-import type { ProColumns, ActionType } from '@ant-design/pro-table';
-import ProTable, { TableDropdown } from '@ant-design/pro-table';
-import request from 'umi-request';
+import type { ActionType } from '@ant-design/pro-table';
+import ProTable from '@ant-design/pro-table';
 
-// import { ButtonProps } from '@alifd/next/types/button';
 import './index.scss';
 
 export interface AntdProTableProps {
@@ -14,101 +10,45 @@ export interface AntdProTableProps {
    * 类型
    */
   type?: "primary" | "secondary" | "normal";
-  color?: 'string';
-  style?: 'object'
+  title?: 'string';
 }
 
-type GithubIssueItem = {
-  url: string;
-  id: number;
-  number: number;
-  title: string;
-  labels: {
-    name: string;
-    color: string;
-  }[];
-  state: string;
-  comments: number;
-  created_at: string;
-  updated_at: string;
-  closed_at?: string;
-};
 
-const columns: ProColumns<GithubIssueItem>[] = [
+const AntdProTable: React.FC<AntdProTableProps> = function AntdProTable(props) {
+  const { type, title } = props;
+
+
+const columns = [
   {
-    dataIndex: 'index',
-    valueType: 'indexBorder',
-    width: 48,
+    title: '应用名称',
+    width: 80,
+    dataIndex: 'title',
   },
   {
-    title: '标题',
-    dataIndex: 'title',
-    copyable: true,
-    ellipsis: true,
-    tip: '标题过长会自动收缩',
-    formItemProps: {
-      rules: [
-        {
-          required: true,
-          message: '此项为必填项',
-        },
-      ],
-    },
+    title: '应用状态',
+    width: 80,
+    dataIndex: 'status',
   },
 ];
 
-const AntdProTable: React.FC<AntdProTableProps> = function AntdProTable({
-  type = 'primary',
-  color,
-  style = {},
-  ...otherProps
-}) {
   const actionRef = React.useRef<ActionType>();
   return (
-    <ProTable<GithubIssueItem>
+    <ProTable
       columns={columns}
       actionRef={actionRef}
       cardBordered
-      request={async (params = {}, sort, filter) => {
-        console.log(sort, filter);
-        return request<{
-          data: GithubIssueItem[];
-        }>('https://proapi.azurewebsites.net/github/issues', {
-          params,
-        });
+      request={async () => {
+        return {
+          data: [{title, type, status: 2}]
+        }
       }}
-      editable={{
-        type: 'multiple',
-      }}
-      columnsState={{
-        persistenceKey: 'pro-table-singe-demos',
-        persistenceType: 'localStorage',
-        onChange(value) {
-          console.log('value: ', value);
-        },
-      }}
-      rowKey="id"
-      search={{
-        labelWidth: 'auto',
-      }}
-      form={{
-        // 由于配置了 transform，提交的参与与定义的不同这里需要转化一下
-        syncToUrl: (values, type) => {
-          if (type === 'get') {
-            return {
-              ...values,
-              created_at: [values.startTime, values.endTime],
-            };
-          }
-          return values;
-        },
-      }}
+      rowKey="title"
       pagination={{
         pageSize: 5,
         onChange: (page) => console.log(page),
       }}
       dateFormatter="string"
-      headerTitle="高级表格"
+      headerTitle={title}
       toolBarRender={false}
     />
   );
