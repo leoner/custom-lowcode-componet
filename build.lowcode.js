@@ -8,7 +8,7 @@ module.exports = {
       {
         engineScope: "@alilc",
         extraAssets: [
-          'https://alifd.alicdn.com/npm/@alilc/lowcode-materials@1.0.1/build/lowcode/assets-prod.json',
+          'https://unpkg.com/@alilc/antd-lowcode-materials@1.0.3/build/lowcode/assets-prod.json'
         ],
       },
     ],
